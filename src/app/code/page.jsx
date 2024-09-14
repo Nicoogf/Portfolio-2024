@@ -1,49 +1,56 @@
+'use client'
+import { useConsole } from '@/context/ConsoleContext';
 import React from 'react'
-import { RxCross2 } from "react-icons/rx";
-import { FaRegWindowMaximize } from "react-icons/fa";
-import { HiMiniMinus } from "react-icons/hi2";
-import { SiVisualstudiocode } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { AiFillBulb } from "react-icons/ai";
+import { GoStarFill } from "react-icons/go";
+import { useMenu } from '@/context/MenusContext';
 
-const VisualStudioCodeApp = () => {
-    return (
-        <main className="w-full h-[100%] bg-blue-500">
-            <header className="w-full bg-blueheader text-whitelettercode flex flex-row justify-between items-center py-1">
 
-                <section className="flex items-center gap-6">
-                <SiVisualstudiocode className="text-bluelettercode text-lg ml-2" />
-                <article>
-                    <h6 className="text-sm"> File </h6>
-                </article>
-                <article>
-                    <h6 className="text-sm"> Edit </h6>
-                </article>
-                <article>
-                    <h6 className="text-sm"> Selection </h6>
-                </article>
-                <article>
-                    <h6 className="text-sm"> View </h6>
-                </article>
-                <article>
-                    <h6 className="text-sm"> Go </h6>
-                </article>
-                <article>
-                    <h6 className="text-sm"> Run </h6>
-                </article>
-                </section>
 
-                <section className="bg-violetinput border border-violetborderinput rounded-md w-[30%] hidden md:flex md:justify-center py-1">
-                    <p className="text-sm text-center text-graylettercode"> portfolio-frontend</p>
-                </section>
+const page = () => {
+  const { viewSrc, toggleViewFolder ,setViewPortfolioFolder } = useMenu()
+  return (
+    <main className="h-[100%] overflow-hidden flex flex-col relative py-24  px-48 ">
+      <h2 className="text-white text-4xl font-semibold z-50"> Visual Portfolio Code </h2>
+      <h3 className="text-whitelettercode text-2xl z-50">  Nicolas Falabella </h3>
+      <section className="z-50 mt-10 flex flex-row">
+        <article className="w-[40%] max-w-[430px] flex flex-col items-start ">
+          <h4 className="text-whitelettercode text-lg"> Recent </h4>
+          <h6 className="text-[#3794FF] text-sm cursor-pointer" onClick={()=>setViewPortfolioFolder(true)}> portfolio-vsc <span className="text-whitelettercode mx-2"> C:/Desktop/portfolio-vsc</span> </h6>
+        </article>
 
-                <section className="text-whitelettercode flex flex-row items-center">
-                    <HiMiniMinus className="text-xl px-3 py-2 box-content"/>
-                    <FaRegWindowMaximize className="text-xl px-3 py-2 box-content"/>
-                    <RxCross2 className="text-xl px-3 py-2 box-content"/>
-                </section>
-            </header>
-            VisualStudioCodeApp
-        </main>
-    )
+        <article className="w-[40%]  max-w-[430px] flex flex-col gap-y-2">
+
+          <h4 className="text-whitelettercode text-lg"> Walkthroughs </h4>
+
+          <section className="bg-[#04112C] overflow-hidden rounded-xl py-6 px-10 relative">
+            <h6 className="text-whitelettercode font-semibold"> Get started with VS Code</h6>
+            <h6 className="text-whitelettercode text-sm"> Customize your editor, learn the basics, and start coding</h6>
+            <div className=" absolute bottom-0 left-0 border-b-4 border-[#3794FF] w-[40%] " />
+            <GoStarFill className="text-whitelettercode bg-pinklettercode absolute top-0 left-0 py-1 px-3 text-xs box-content rounded-br-lg" /> 
+          </section>
+
+          <section className="flex flex-row items-center bg-[#04112C] rounded-xl gap-x-3 p-2">
+            <AiFillBulb className="text-[#3794FF]" />
+            <p className="font-semibold text-whitelettercode"> Lear the fundamentals </p>
+          </section>
+          <section className="flex flex-row items-center bg-[#04112C] rounded-xl gap-x-3 p-2">
+            <AiFillBulb className="text-[#3794FF]" />
+            <p className="font-semibold text-whitelettercode"> Lear the fundamentals </p>
+          </section>
+          <section className="flex flex-row items-center bg-[#04112C] rounded-xl gap-x-3 p-2">
+            <AiFillBulb className="text-[#3794FF]" />
+            <p className="font-semibold text-whitelettercode"> Lear the fundamentals </p>
+          </section>
+
+
+
+        </article>
+      </section>
+      <VscVscode className="text-[#020918] text-[350px] absolute inset-0 m-auto " />
+    </main>
+  )
 }
 
-export default VisualStudioCodeApp;
+export default page
