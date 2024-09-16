@@ -12,8 +12,26 @@ const page = () => {
 
   const { toggleConsole , viewConsole} = useConsole() ;
   return (
-    <main className="h-[100%] overflow-hidden selection:bg-violetborderinput/85">
-      <section className="bg-bluedarkmain w-full">
+    <main className="h-[100%] overflow-hidden selection:bg-violetborderinput/85 text-xs md:text-base">
+      <section className="bg-bluedarkmain w-full flex flex-row">
+
+        <article className="h-[37px] bg-[#1D1641] flex flex-row justify-center items-center w-[100%] max-w-[170px]  gap-x-1">
+          <DiHtml5 className="text-red-500 text-base mr-1 " />
+          <p className="text-whitelettercode text-xs"> experiencia.html </p>
+          <p className="font-semibold mx-1 text-whitelettercode text-[11px]"> M </p>
+          <Link href="/code">
+            <RxCross2 className="text-whitelettercode hover:bg-[#302C4A] p-1 text-sm box-content rounded-md" />
+          </Link>
+        </article>
+
+        <article className="h-[37px] bg-[#1D1641] flex flex-row justify-center items-center w-[100%] max-w-[170px]  gap-x-1">
+          <DiHtml5 className="text-red-500 text-base mr-1 " />
+          <p className="text-whitelettercode text-xs"> experiencia.html </p>
+          <p className="font-semibold mx-1 text-whitelettercode text-[11px]"> M </p>
+          <Link href="/code">
+            <RxCross2 className="text-whitelettercode hover:bg-[#302C4A] p-1 text-sm box-content rounded-md" />
+          </Link>
+        </article>
 
         <article className="h-[37px] bg-[#1D1641] flex flex-row justify-center items-center w-[100%] max-w-[170px]  gap-x-1">
           <DiHtml5 className="text-red-500 text-base mr-1 " />
@@ -44,12 +62,12 @@ const page = () => {
 
         </div>
       </section>
-      <section className={`${ viewConsole ? "h-[60%]" : "h-[80%]"} bg-bluedarkmain flex flex-col gap-y-2 overflow-hidden overflow-y-scroll  pb-20 code`}>
+      <section className={`${ viewConsole ? "h-[60%]" : "h-[80%]"} bg-bluedarkmain flex flex-col gap-y-1 overflow-hidden overflow-y-scroll  pb-20 code`}>
 
         <article className="flex flex-row items-center mt-1">
 
           <p className="text-pinkactive font-semibold text-xs ml-4 mr-4 w-[20px] text-center code no-select"> 1 </p>
-          <div className="ml-4">
+          <div className="md:ml-4">
            <p> 
             <span className="text-pinkactive"> {`<!DOCTYPE`} </span> 
             <span className="text-yellowelettercode"> {`html`} </span> 
@@ -63,7 +81,7 @@ const page = () => {
         <article className="flex flex-row items-center -mt-1">
           <p className="text-pinkactive font-semibold text-xs ml-4 mr-2 w-[20px] text-center code no-select"> 2 </p>
           <IoIosArrowForward className="text-graylettercode" /> 
-          <div className="ml-2">
+          <div className="ml-1 md:ml-2">
           <p> 
             <span className="text-pinkactive"> {`<html`} </span> 
             <span className="text-yellowelettercode"> {`lang`} </span> 
@@ -74,19 +92,19 @@ const page = () => {
           </div>
         </article>
 
-        <article className="flex flex-row items-center -mt-1">
+        <article className="flex flex-row items-center md:-mt-1">
           <p className="text-pinkactive font-semibold text-xs ml-4 mr-2 w-[20px] text-center code no-select"> 3 </p> 
           <IoIosArrowForward className="text-graylettercode" />        
-          <div className="ml-8">
+          <div className="ml-2 md:ml-8">
           <p> 
             <span className="text-pinkactive"> {`<head>`} </span>            
            </p>
           </div>
         </article>
 
-        <article className="flex flex-row items-center -mt-1">
+        <article className="flex flex-row items-center md:-mt-1">
           <p className="text-pinkactive font-semibold text-xs ml-4 mr-2 w-[20px] text-center code no-select"> 4 </p>                
-          <div className="ml-16">
+          <div className="ml-5 md:ml-16">
           <p> 
             <span className="text-pinkactive"> {`<meta`} </span> 
             <span className="text-yellowelettercode"> {`charset`} </span>   
@@ -97,9 +115,9 @@ const page = () => {
           </div>
         </article>
 
-        <article className="flex flex-row items-center -mt-1">
+        <article className="flex flex-row items-center md:-mt-1">
           <p className="text-pinkactive font-semibold text-xs ml-4 mr-2 w-[20px] text-center code no-select"> 5 </p>                
-          <div className="ml-16">
+          <div className="ml-2 md:ml-16">
           <p> 
             <span className="text-pinkactive"> {`<meta`} </span> 
             <span className="text-yellowelettercode"> {`name`} </span>   
@@ -297,7 +315,7 @@ const page = () => {
             <span className="text-pinkactive"> {`<script`} </span>   
             <span className="text-yellowelettercode"> {`src`} </span> 
             <span className="text-pinkactive"> {`=`} </span> 
-            <Link href="/" className="text-skybluelettercode underline cursor-pointer"> {`"./stack.js"`} </Link> 
+            <Link href="/code/stack" className="text-skybluelettercode underline cursor-pointer"> {`"./stack.js"`} </Link> 
             <span className="text-pinklettercode"> {`>`} </span> 
            
             <span className="text-pinkactive"> {`</script>`} </span>                 

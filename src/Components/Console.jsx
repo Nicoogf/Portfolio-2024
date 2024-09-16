@@ -391,6 +391,18 @@ const ConsoleComponent = () => {
             case "ls":
                 message = ".next   node_modules    public  src";
                 break;
+            case "node tecnologias.js":
+                message = "Hello word desde portfolio personal";
+                break;
+            case "git add":
+                message = " ";
+                break;
+            case "git commit":
+                message = "[main f8do87a] Update 1 file changed, 44 insertions(+), 1 deletion(-)";
+                break;
+            case "git push":
+                message = "Enumerating objects: 21, done. To https://github.com/Nicoogf/Portfolio-2024 05scf7f..f7ma27b  main -> main"
+                break;
             case "close":
                 router.push("/code")
                 return;
@@ -401,7 +413,7 @@ const ConsoleComponent = () => {
                 toggleConsole()
                 return;
             case "help":
-                message = "Ayuda";
+                message = "/ls /close / exit /killconsole /node tecnologias.js /git add  /git commit"
                 break;
             default:
                 message = "No se puede hacer ninguna acción con ese comando.Escribe help para ver el listado de comandos disponibles";

@@ -20,6 +20,7 @@ import { FaJsSquare } from "react-icons/fa";
 import { AiFillFilePdf } from "react-icons/ai";
 import { DiCss3 } from "react-icons/di";
 import { FaJava } from "react-icons/fa6";
+import { SiTypescript } from "react-icons/si";
 import Link from 'next/link';
 import { useConsole } from '@/context/ConsoleContext';
 import { randomNumber } from '@/utils/random';
@@ -69,30 +70,30 @@ const VisualStudioCodeApp = ({children}) => {
 
             <main className="w-full bg-bluedarkmain grid grid-cols-12 h-[calc(100vh-56px)]">
 
-                <nav className="col-span-2 md:col-span-4 lg:col-span-3 xl:col-span-2 h-[100%] flex flex-row">
+                <nav className="col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 h-[100%] flex flex-row">
 
-                    <section className="bg-bluedarkmain flex flex-col h-[100%] p-3 gap-y-6">
-                        <FaRegCopy className=" text-2xl text-pinkactive transition-all duration-100" />
-                        <LiaSearchSolid className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" onClick={toggleConsole}/>
+                    <section className="bg-bluedarkmain  flex-col h-[100%] p-3 gap-y-6 hidden lg:flex">
+                        <FaRegCopy className=" text-2xl text-pinkactive transition-all duration-100 cursor-pointer" />
+                        <LiaSearchSolid className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100 cursor-pointer" />
 
-                        <div className="relative">
+                        <div className="relative cursor-pointer">
                             <p className="absolute text-whitelettercode bg-pinkactive rounded-full w-4 h-4 r text-center text-[10px] -bottom-2 -right-2 flex justify-center items-center font-semibold">
                                 {changesGit ? <ImClock className="font-semibold" /> : <span> 4 </span>}
                             </p>
                             <IoGitMergeOutline className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" />
                         </div>
 
-                        <VscDebugAlt className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" />
+                        <VscDebugAlt className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100 cursor-pointer" />
 
-                        <div className="relative">
+                        <div className="relative cursor-pointer">
                             <p className="absolute text-whitelettercode bg-pinkactive rounded-full w-4 h-4 r text-center text-[10px] -bottom-2 -right-2 flex justify-center items-center font-semibold">
                                 <span> 1 </span>
                             </p>
                             <VscExtensions className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" />
                         </div>
-                        <VscRemoteExplorer className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" />
-                        <BiLogoMongodb className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" />
-                        <FaDocker className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100" />
+                        <VscRemoteExplorer className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100 cursor-pointer" />
+                        <BiLogoMongodb className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100 cursor-pointer" />
+                        <FaDocker className="text-iconOff text-2xl hover:text-pinkactive transition-all duration-100 cursor-pointer" />
                     </section>
 
                     <section className="h-[100%] w-full">
@@ -102,70 +103,80 @@ const VisualStudioCodeApp = ({children}) => {
                             <IoIosMore className="" />
                         </div>
 
-                        <section className="bg-[#04112E] w-full flex flex-col">
+                        <section className="bg-[#04112E] w-full flex flex-col gap-y-1 md:gap-y-0">
 
                             <Link href="/code" className="flex flex-row text-[#169AFF] items-center cursor-pointer" onClick={toggleViewFolder}>
                                 <MdKeyboardArrowRight className={`text-[#B9AE90] text-xl ${viewPortfolioFolder ? "rotate-90" : ""} transition-all duration-300`} />
                                 <h6 className="font-bold text-[11px]">PORTFOLIO-VSC</h6>
                             </Link>
 
-                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-4  text-[#169AFF] items-center gap-x-1`}>
-                                <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" />
-                                <FaFolder className="text-[#546E7A] text-sm mr-1 " />
-                                <h6 className="text-sm">.next</h6>
+                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-1 md:ml-4  text-[#169AFF] items-center gap-x-1`}>
+                                <MdKeyboardArrowRight className="text-[#B9AE90] text-xs md:text-xl" />
+                                <FaFolder className="text-[#546E7A]  text-xs md:text-sm mr-1 " />
+                                <h6 className="text-[10px] md:text-sm">.next</h6>
                             </article>
 
-                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-4  text-[#169AFF] items-center gap-x-1`}>
-                                <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" />
-                                <FaFolder className="text-[#8BC34A] text-sm mr-1 " />
-                                <h6 className="text-sm">node_modules</h6>
+                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-1 md:ml-4  text-[#169AFF] items-center gap-x-1`}>
+                            <MdKeyboardArrowRight className="text-[#B9AE90] text-xs md:text-xl" />
+                                <FaFolder className="text-[#8BC34A] text-xs md:text-sm mr-1 " />
+                                <h6 className="text-[10px] md:text-sm">node_modules</h6>
                             </article>
-                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-4  text-[#169AFF] items-center gap-x-1`}>
-                                <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" />
-                                <FaFolder className="text-[##039BE5] text-sm mr-1 " />
-                                <h6 className="text-sm"> public</h6>
-                            </article>
-
-                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-4  text-[#169AFF] items-center gap-x-1 cursor-pointer`} onClick={toggleViewSrc}>
-                                <MdKeyboardArrowRight className="text-[#B9AE90] text-xl"/>
-                                <FaFolder className="text-[#EF5350] text-sm mr-1 " />
-                                <h6 className="text-sm text-whitelettercode"> src</h6>
+                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-1 md:ml-4  text-[#169AFF] items-center gap-x-1`}>
+                            <MdKeyboardArrowRight className="text-[#B9AE90] text-xs md:text-xl" />
+                                <FaFolder className="text-[##039BE5] text-xs md:text-sm mr-1 " />
+                                <h6  className="text-[10px] md:text-sm"> public</h6>
                             </article>
 
-                            <Link href="/code/readme" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-8  text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
+                            <article className={` ${viewPortfolioFolder ? "flex flex-row " : "hidden"} ml-1 md:ml-4  text-[#169AFF] items-center gap-x-1 cursor-pointer`} onClick={toggleViewSrc}>
+                                <MdKeyboardArrowRight className={`text-[#B9AE90] text-xl ${viewSrc ? "rotate-90" : ""} transition-all duration-300  text-xs md:text-xl`} />
+                                <FaFolder className="text-[#EF5350] text-xs md:text-sm mr-1  " />
+                                <h6 className="text-[10px] md:text-sm text-whitelettercode"> src</h6>
+                            </article>
+
+                            
+                            <Link href="/code/contact" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-1 md:pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
                                 {/* <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" /> */}
-                                <FaCircleInfo className="text-[#42A5F5] text-base ml-4 " />
-                                <h6 className="text-[13px] text-whitelettercode py-[1px]"> README.md </h6>
+                                <DiCss3 className="text-[#30ABE1] text-sm md:text-base ml-4 " />
+                                <h6 className="text-[10px] sm:text-[13px] text-whitelettercode py-[1px]"> Contacto.css </h6>
                             </Link>
 
-                            <Link href="/code/experience" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
+                            <Link href="/code/curriculum" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-1 md:pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
                                 {/* <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" /> */}
-                                <DiHtml5 className="text-orange-500 text-base ml-4 " />
-                                <h6 className="text-[13px] text-whitelettercode py-[1px]"> Experiencia.html </h6>
+                                <AiFillFilePdf className="text-red-500 text-sm md:text-base ml-4 " />
+                                <h6 className="text-[10px] sm:text-[13px] text-whitelettercode py-[1px]"> Curriculum.pdf </h6>
                             </Link>
 
-                            <Link href="/code/contact" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
+                            <Link href="/code/experience" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-1 md:pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
                                 {/* <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" /> */}
-                                <DiCss3 className="text-[#30ABE1] text-base ml-4 " />
-                                <h6 className="text-[13px] text-whitelettercode py-[1px]"> Contacto.css </h6>
+                                <DiHtml5 className="text-orange-500 text-sm md:text-base ml-4 " />
+                                <h6 className="text-[10px] sm:text-[13px]] text-whitelettercode py-[1px]"> Experiencia.html </h6>
                             </Link>
 
-                            <Link href="/code/stack" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
+                            <Link href="/code/readme" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-1 md:pl-8 text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
                                 {/* <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" /> */}
-                                <FaJsSquare className="text-yellow-400 text-base ml-4 " />
-                                <h6 className="text-[13px] text-whitelettercode py-[1px]"> Tecnologias.js </h6>
+                                <FaCircleInfo className="text-[#42A5F5] text-sm md:text-base ml-4 " />
+                                <h6 className="text-[10px] sm:text-[13px] text-whitelettercode py-[1px]"> README.md </h6>
                             </Link>
 
-                            <Link href="/code/curriculum" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
+
+                            <Link href="/code/stack" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-1 md:pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
                                 {/* <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" /> */}
-                                <AiFillFilePdf className="text-red-500 text-base ml-4 " />
-                                <h6 className="text-[13px] text-whitelettercode py-[1px]"> Curriculum.pdf </h6>
+                                <FaJsSquare className="text-yellow-400  text-sm md:text-base ml-4 " />
+                                <h6 className="text-[10px] sm:text-[13px] text-whitelettercode py-[1px]"> Tecnologias.js </h6>
                             </Link>
 
-                            <Link href="/code/readme" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-8 mt-[2px] text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
+                         
+                            
+
+
+                            
+
+                           
+
+                            <Link href="/code/proyectos" className={` ${viewSrc ? "flex flex-row " : "hidden"} pl-1 md:pl-8 mt-[2px] mb-4 text-[#169AFF] items-center gap-x-1 hover:bg-bluehover`}>
                                 {/* <MdKeyboardArrowRight className="text-[#B9AE90] text-xl" /> */}
-                                <FaJava className="text-red-500 text-base ml-4 " />
-                                <h6 className="text-[13px] text-whitelettercode py-[1px]"> Proyectos.java </h6>
+                                <SiTypescript  className="text-[#2F74C0]  text-sm md:text-base ml-4  " />
+                                <h6 className="text-[10px] sm:text-[13px] text-whitelettercode py-[1px]"> Proyectos.ts </h6>
                             </Link>
 
 
@@ -188,7 +199,8 @@ const VisualStudioCodeApp = ({children}) => {
                     </section>
                 </nav>
 
-                <section className="bg-bluedarkmain col-span-10 md:col-span-8 lg:col-span-9 xl:col-span-10 relative  overflow-hidden h-[100%]">                    
+                <section className="bg-bluedarkmain col-span-8 md:col-span-8 lg:col-span-9 xl:col-span-10 relative  overflow-hidden h-[100%]">
+                                        
                     {children}
 
                     {/* <section className={`${ viewConsole ? "flex translate-y-0" :  "translate-y-96"} transition-all duration-200 absolute bg-red-500 -bottom-0  right-0 z-[99] w-full h-[35%] flex flex-col`}>

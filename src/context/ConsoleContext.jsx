@@ -25,7 +25,7 @@ export const ConsoleProvider = ({ children }) => {
 
 
     return (
-        <ConsoleContext.Provider value={{ toggleConsole , viewConsole }}>
+        <ConsoleContext.Provider value={{ toggleConsole , viewConsole ,setViewConsole}}>
             {children}
         </ConsoleContext.Provider>
     );
